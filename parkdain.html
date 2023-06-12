@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,  maximum-scale=1.0, width=device-width, user-scalable=0">
+  <script src="https://kit.fontawesome.com/3a48d17946.js" crossorigin="anonymous"></script>  
+  <title>PARK DAIN</title>
+  <style>
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+   body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: rgb(225, 227, 227);
+      font-family: "Noto Sans KR", sans-serif !important;
+    }
+
+    #wrapper {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* 굵은 폰트 스타일 */
+    .boldtext {
+      font-weight: bold;
+      font-family: "Arial Black";
+      letter-spacing: -1.5px;
+    }
+
+    /* 로고 위치 */
+    #logo { padding-left: 50px; }
+
+    /* Navigation menu bar(header) Section */
+    #header {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      position: sticky; left: 0; right: 0; top: 0;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    #nav { 
+      margin-left: auto; 
+      display: flex;
+    }
+
+    nav a:hover { color: rgb(170, 37, 41); }
+
+    #nav ul {
+      list-style: none;
+      margin-right: 20px;
+    }
+
+    #nav li {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 0.25em;
+      padding: 0;
+    }
+
+    #nav > ul > li > a {
+      display: inline-block;
+      /* height: 2.25em; */
+      line-height: 2.7em;
+      padding: 0 1.25em;
+      border: 0;
+      border-radius: 8px;
+      font-family: 'Arial', 'Helvetica';
+      font-size: 130%;
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(52, 52, 52);
+    }
+
+    .nav_flip {
+      position: absolute;
+      right: 18px;
+      top: 18px; 
+      display: none;
+      font-size: 130%;
+    }
+
+    button {
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      padding: 0;
+    }
+
+    /* Home Section */
+    #section section {
+      /* border-bottom: gray solid 1px; */
+      background-color: rgb(225, 227, 227);
+    }
+
+    #home {
+      min-height:450px;
+      background-image: url("./image/home.jpeg");
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #home img {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #eng, #kor {
+      display: inline-block;
+      align-items: center;
+      margin: 0 auto;
+      color: azure;
+      text-shadow: 0px 0px 4px rgb(69, 63, 63);
+      font-size: 1.7em;
+      letter-spacing: -1.5px;
+      font-weight: 350;
+    }
+    
+    /* About section */
+    .menu_text {
+      text-align: center;
+      font-weight: bold;
+      font-family: "Arial Black";
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      padding: 50px 0px;
+      color: rgb(52, 52, 52);;
+    }
+
+    #about img { width: 20%; }
+
+    .about_container {
+      display: flex;
+      align-items: center;
+      margin: 3vh 7vw;
+      justify-content: center;
+    }
+
+    /* 말풍선 스타일 */
+    .intro {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      border-radius: 30px;
+      box-shadow: 0px 5px 20px rgb(189, 189, 189);
+      padding: 4vh 3vw;
+      margin-left: 60px;
+      font-size: 1.5em;
+    }
+
+    .intro::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 22px solid transparent;
+      border-right-color: white;
+      border-left: 0;
+      border-top: 0;
+      margin-top: -11px;
+      margin-left: -22px;
+    }
+    
+    .intro h3 { margin: 10px 0; }
+
+    #intro_left div, #intro_right div { margin: 1em 0; }
+
+    #intro_left { border-right: 2.4px dotted #535353; }
+
+    #intro_left span{
+      display: block;
+      margin-right: 2vw;
+    }
+
+    #intro_right { margin-left: 2em; }
+
+    .intro ul {
+      margin: 10px 0; 
+      padding-inline-start: 15px;
+      margin-bottom: 1.2em;
+    }
+
+    /* Skills section */
+    .skill_container {
+      display: flex;
+      justify-content: center;
+      align-content: flex-start;
+      flex-flow: wrap;
+      width: 100%;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    .skill {
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      margin: 1vh 2vw;
+      
+      width: 250px;
+      height: 320px;
+      background-color: white;
+      box-shadow: 0px 0px 5px rgb(173, 173, 173);
+      /* text-align: center; */
+      border-radius: 30px;
+    }
+
+    .skill span {
+      padding: 10px 0;
+      width: 100%;
+      font-size: 1.9em;
+      font-weight: 800;
+      background-color: rgb(223, 178, 179);
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      text-align: center;
+    }
+
+    .fe_skill, .be_skill, .design_skill {
+      overflow: hidden;
+      padding: 1.6em;
+    }
+
+    /* 프로그램 폰트 스타일 */
+    .pfont {
+      font-size: 160%;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+      font-family: Arial, Helvetica;
+    }
+
+    /* 퍼센티지 폰트 스타일 */
+    .cfont {
+      font-size: 120%;
+      font-weight: 400;
+      color: #727272;
+    }
+
+    .program {
+      float: left;
+      margin: 0;
+    }
+
+    .percentage {
+      float: right;
+      margin: 0;
+    }
+
+    .progress_bar {
+      width: 100%;
+      background: rgb(208, 208, 208);
+    }
+
+    .fe_skill .progress_bar, .be_skill .progress_bar { margin-bottom: 15px; }
+
+    .design_skill .progress_bar { margin-bottom: 14px; }
+
+    /* 퍼센티지 */
+    .fill_num {
+        height: 8px;
+        background: rgb(217, 46, 54);
+        text-align: center;
+    }
+
+    .fe_skill .fill_num, .be_skill .fill_num {
+      width: 50%;
+      margin-top: 18%;
+    }
+
+    .design_skill .fill_num {
+      width: 50%;
+      margin-top: 24%;
+    }
+
+    #photoshop_ptg { margin-top: 17% }
+
+    /* Portfolio section */
+    .portfolio {
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      width: 70%;
+      margin: 0 auto;
+      background-color: white;
+      /* text-align: center; */
+      border-radius: 30px;
+      box-shadow: 0px 0px 5px rgb(173, 173, 173);
+    }
+
+    .portfolio span {
+      padding: 10px 0;
+      width: 100%;
+      font-size: 2em;
+      font-weight: 800;
+      background-color: rgb(223, 178, 179);
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      text-align: center;
+    }
+
+    /* 슬라이드  */
+    .section input[id*="slide"] { display: none; }
+    .section .slidewrap { max-width: 1200px; margin: 0 auto;}
+    .section .slidelist { white-space: nowrap; font-size: 0; overflow: hidden; position: relative; }
+    .section .slidelist > li { display: inline-block; vertical-align: middle; width: 100%; transition: all .5s;}
+    .section .slidelist > li > a { display: block; position: relative;}
+    .section .slidelist > li > a img { width: 100%;}
+    .section .slidelist label { position: absolute; z-index:10; top:50%; transform: translateY(-50%); padding: 35px; cursor: pointer; }
+
+    .section input[id="slide01"]:checked ~ .slidewrap .slidelist > li { transform: translateX(0%); }
+    .section input[id="slide02"]:checked ~ .slidewrap .slidelist > li { transform: translateX(-100%); }
+    .section input[id="slide03"]:checked ~ .slidewrap .slidelist > li { transform: translateX(-200%); }
+
+    /* 좌,우 슬라이드 버튼 */
+    .slide_control > div { display: none; }
+    .section .left { left: 10px; background: url('./slide/left.png') center center / 100% no-repeat; }
+    .section .right { right: 10px; background: url('./slide/right.png') center center / 100% no-repeat; }
+    .section input[id="slide01"]:checked ~ .slidewrap .slide_control > div:nth-child(1) { display: block; }
+    .section input[id="slide02"]:checked ~ .slidewrap .slide_control > div:nth-child(2) { display: block; }
+    .section input[id="slide03"]:checked ~ .slidewrap .slide_control > div:nth-child(3) { display: block; }
+
+    /* 페이징 */
+    .slide_pagelist { text-align:center;padding:5px; }
+    .slide_pagelist > li { display:inline-block; vertical-align:middle; }
+    .slide_pagelist > li > label { display: block; padding: 8px 8px; border-radius: 30px; background: rgb(164, 164, 164); margin: 20px 10px; cursor:pointer; }
+    .section input[id="slide01"]:checked ~ .slidewrap .slide_pagelist > li:nth-child(1) > label { background: pink; }
+    .section input[id="slide02"]:checked ~ .slidewrap .slide_pagelist > li:nth-child(2) > label { background: pink; }
+    .section input[id="slide03"]:checked ~ .slidewrap .slide_pagelist > li:nth-child(3) > label { background: pink; }
+
+    /* Contact section */
+    .contact_container {
+      display: flex;
+      flex-flow: column;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 10%;
+      align-content: space-between;
+      /* flex-wrap: wrap; */
+      flex-direction: row;
+    }
+
+    .address {
+      width: 50%;
+      border-right: 1px solid #535353;
+    }
+
+    .con_item{
+      display: inline;
+      overflow: hidden;
+    }
+    .con_item img {
+      width: 90%;
+      margin-bottom: 15px;
+      text-align: center;
+      margin-right: 1.8em;
+      float: right;
+    }
+
+    .contact_board {
+      text-align: center;
+      font-weight: bold;
+      font-family: "Arial Black";
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      padding: 15px 0px;
+      color: rgb(52, 52, 52);;
+    }
+
+    .box_wrap {
+      text-align: center;
+      width: 45%;
+      margin: 0 auto;
+    }
+
+    .box {
+      background-color: white;
+      border-radius: 30px;
+      padding: 5px;
+      overflow: hidden;
+    }
+
+    .writer, .pw, .contents {
+      padding: 5px 0;
+    } 
+
+    .contact_btn {
+      width: 30px;
+      cursor: pointer;
+      padding: 3px 8px;
+      border: 1px solid gray;
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    .box_list {
+      width: 60%;
+      /* margin: 0 auto; */
+      padding: 10px 0;
+      display: inline-block;
+    }
+
+    .box_input {
+      padding-bottom: 20px;
+    }
+
+    .box_comment {
+      padding: 10px 0;
+      word-wrap: break-word;
+      text-align: left;
+    }
+
+    .box_text {
+      padding-right: 1.2em;
+    }
+
+    .box_btn {
+      display: inline-block;
+      margin: 5px;
+    }
+
+
+    /* Footer section */
+    .footer {
+      height: 7em;
+      padding: 30px 0;
+      background-color: rgb(223, 178, 179);
+      text-align: center;
+    }
+
+    /* Top button */
+    .footer_button {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 50px;
+    }
+
+    #button {
+      margin-top: 1.5em;
+      background-color: rgb(255, 248, 238);
+      border-radius: 40px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 65px;
+      color: black;
+    }
+
+    .links div {
+      position: relative;
+      display: inline-block;
+      margin:1em;
+    }
+
+    .links img { width: 3em; }
+    
+    .copyright {
+      color: rgb(52, 52, 52);
+    }
+
+    .menu-active {
+      background-color: red;
+    }
+
+    .box_input input, .box_input textarea {
+      width: 70%;
+      height: 24px;
+    }
+
+    .box_input div {
+      padding: 5px 3em;
+    }
+
+    /* media query */
+    @media screen and (max-width: 767px) {
+    #header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    #logo {
+      padding-left: 1.2em;
+      font-size: 1.3em;
+      display: inline-block;
+    }
+
+    #nav {
+      margin: 0px;
+      flex-direction: column;
+      /* align-items: flex-start; */
+      box-shadow: inset 0 5px 9px -7px rgba(0,0,0,0.4);
+      }
+     
+    #nav li {
+      width: 100%;
+      text-align: center; 
+      margin: 0px;
+      padding: 10px 3px;
+    }
+
+    #nav li:not(:last-child) {
+      border-bottom: 0.5px rgb(216, 216, 216) solid;
+    }
+
+    #nav ul {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    #nav > ul > li > a {
+      font-size: 90%;
+    }
+
+    /* 토글 메뉴 */
+    .nav_menu {
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+ 
+    .nav_flip {
+      display: block;
+    }
+
+    .nav_menu.active {
+      display: flex;
+    }
+
+    .menu_text {
+      padding: 30px 0;
+    }
+
+    #home {
+      flex-direction: column;
+      align-items: flex-center;
+    }    
+
+    .about_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px;
+    }  
+
+    #about img {
+      width: 35%;
+    }
+
+    .intro { 
+      margin-right: 60px;
+      margin-top: 12vw;
+      font-size: 1.3em;
+    }
+
+    .intro:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 45%;
+      width: 0;
+      height: 0;
+      border: 22px solid transparent;
+      border-bottom-color: white;
+      border-top: 0;
+      border-right: 0;
+      margin-left: -11px;
+      margin-top: -22px;
+    }
+
+    #intro_left {
+      padding: 10px;
+    }
+
+    #intro_right {
+      margin-left: 1em;
+    }
+
+    .skill {
+      margin-bottom: 1em;
+    }
+
+    /* portfolio section */
+    .portfolio {
+      width: 95%;
+    }
+
+    .slide_pagelist {
+      padding: 0px;
+    }
+
+    /* 화살표 간격 */
+    .section .slidelist label {
+      padding: 13px;
+    }
+
+    .slide_pagelist > li > label {
+      margin: 0px 10px;
+    }
+
+    .address {
+      width: 100%;
+      margin: 0 auto;
+      border: 0;
+      padding-bottom: 2em;
+      border-bottom: 1px solid black;
+      margin-bottom: 1.5em;
+    }
+    
+    .con_item img {
+      margin: 0 0;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    #con04 {
+      margin-bottom: 20px;
+      border-bottom: 1px solid black;
+    }
+
+    .contact_container {
+      flex-flow: column;
+    }
+
+    .box_wrap {
+      width: 100%;
+    }
+
+    }
+    
+  </style>
+  <script>    
+      // 토글 메뉴
+      window.onload = function() {
+        var toggleBtn = document.querySelector(".nav_flip");
+        var menu = document.querySelector(".nav_menu");
+        var item = document.querySelector(".nav_menu li");
+
+        toggleBtn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+      }
+
+      // 게시판 구현
+      // GET
+      fetch("http://localhost:3000/posts", {
+        method: "GET",
+        headers: {
+            "content-type": "application/json; charset=UTF-8",
+          },
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        data.forEach((v, i) => {
+          const _box = document.querySelector('#box');
+          const box = document.importNode(_box.content, true)
+          const text = box.querySelector('.box_text')
+          box.id = i
+          text.innerHTML = `${box.id+1}. ${v.writer}님의 글 : ${v.contents}`
+
+      // DELETE
+      const btnDelete = box.querySelector(".deleteWriting")
+      btnDelete.onclick = function() {
+      if(confirm("정말 삭제하시겠습니까?"))
+        var ans = prompt("비밀번호를 입력하세요.");
+          if (ans == v.pw) {
+            fetch(`http://localhost:3000/posts/${box.id}`, {
+              method: "DELETE",
+              headers: {
+            "content-type": "application/json; charset=UTF-8",
+              },
+            })
+              .then((response) => response.json())
+              .then((data) => console.log(data));
+
+              alert("글이 삭제되었습니다.");  
+          } else { alert("비밀번호가 틀렸습니다.")}
+        }
+
+        const btnModify = box.querySelector(".editWriting")
+        btnModify.onclick = function() {
+          editWriting(v.id, v.pw)
+        }
+
+        const boxList = document.querySelector(".box_list")
+        boxList.appendChild(box);
+      });
+    });
+
+    // POST
+    function saveWriting() {
+      if ($("#writer").val().length <= 0 || $("#contents").val().length <= 0) {
+          alert("등록할 글의 작성자와 내용을 입력해주세요!");
+          return;
+        }
+
+      if ($("#pw").val().length != 4) {
+          alert("비밀번호는 4자로만 입력해주세요!");
+          return;
+        }
+
+      fetch("http://localhost:3000/posts", {
+        method: "POST",
+        body: JSON.stringify({
+          // 전송할 데이터
+          writer: $("#writer").val(),
+          pw: $("#pw").val(),
+          contents: $("#contents").val(),
+          id: $("#user_id").val()
+        }),
+        headers: {
+          "content-type": "application/json; charset=UTF-8",
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch(error => console.log(error));
+    }
+
+  function editWriting(id, pw) {
+    var title = document.getElementById("write");
+    var modBtn = document.getElementById("modifyWriting");
+
+    title.innerText = "Edit";
+    modBtn.innerHTML = `<span class="contact_btn" onclick="modifyWriting(${id}, '${pw}')">수정</span>`;
+  }
+
+  function modifyWriting(id, pw) {
+    const password = window.prompt('비밀번호를 입력하세요.');
+
+    if (password != pw) {
+          alert('비밀번호가 틀렸습니다.');
+          return;
+    }
+
+    // PUT
+    fetch(`http://localhost:3000/posts/${id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            writer: $("#writer").val(),
+            pw: pw,
+            contents: $("#contents").val()
+          }),
+        })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch(error => console.log(error));    
+        
+      alert("수정 완료되었습니다.");
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <!-- 상단 메뉴바 -->
+    <header id="header">
+      <h1 id="logo" class="boldtext">PARK DAIN</h1>
+      <nav id="nav">
+        <ul class="nav_menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav_flip">
+        <i class="fas fa-bars"></i>
+      </button>
+    </header>
+    <!-- 메뉴 section -->
+    <section id="section">
+      <!-- 홈 메뉴 section -->
+      <section id="home">
+        <div class="boldtext" id="eng"><h1>Hello, I'm Dain</h1></div>
+        <div>
+          <img src="./image/profile.png" alt="profile">
+        </div>  
+        <div class="boldtext" id="kor"><h1>안녕하세요 박다인입니다.</h1></div>
+      </section>
+
+      <!-- about 메뉴 section -->
+      <section class="menu" id="about">
+        <div class="menu_text">About Me</div>
+        <div class="about_container">
+          <img src="./image/profile3.png" alt="profile" id="profile">
+          <div class="intro">
+            <div id="intro_left">
+              <div class="name">
+                <h3>Name</h3>
+                <span class="content">박다인</span>
+              </div>
+              <div class="birthdate">
+                <h3>BirthDate</h3>
+                <span class="content">1999.12.24</span>
+              </div>
+              <div class="mbti">
+                <h3>MBTI</h3>
+                <span class="content">ENFP</span>
+              </div>
+              <div class="ideal">
+                <h3>Ideal Job</h3>
+                <span class="content">IT 회사 직원</span>
+              </div>
+            </div>
+            <div id="intro_right">
+              <div class="education">
+                <h3>Education</h3>
+                <span class="content">Soongsil University Global Media</span>
+                <span style="display: block;">2018. 3 ~ 2023. 2</span>
+              </div>
+              <div class="participation">
+                <h3>Participation</h3>
+                <ul>
+                  <li>2018. 6 제 10회 숭실 재학생 토론대회 대상</li>
+                  <li>2020.10 방구석 30초 통일광고 공모전 우수상</li>
+                </ul>
+              </div>
+              <div class="foi">
+                <h3>Field of Interest</h3>
+                <ul>
+                  <li>프론트엔드 개발</li>
+                  <li>영상처리</li>
+                  <li>기획 및 연출</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- skills 메뉴 section -->
+      <section class="menu" id="skills">
+        <div class="menu_text">Skills</div>
+        <div class="skill_container">
+          <div class="skill">
+            <!-- Front-end -->
+            <span id="frontend">Front-end</span>
+            <div class="fe_skill">
+              <!-- html -->
+              <p class="program pfont">HTML5</p>
+              <p class="percentage cfont" >60%</p>
+              <div class="progress_bar" id="html">
+                <div class="fill_num" id="html_ptg" style="width: 60%;"></div>
+              </div>
+              <br>
+              <!-- CSS3 -->
+              <p class="program pfont">CSS3</p>
+              <p class="percentage cfont" >60%</p>
+              <div class="progress_bar" id="css">
+                <div class="fill_num" id="css_ptg" style="width: 60%;"></div>
+              </div>
+              <br>
+              <!-- JavaScript -->
+              <p class="program pfont">JavaScript</p>
+              <p class="percentage cfont" >50%</p>
+              <div class="progress_bar" id="js">
+                <div class="fill_num" id="js_ptg" style="width: 50%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <span id="backend">Back-end</span>
+            <!-- Back-end -->
+            <div class="be_skill">
+              <!-- Python -->
+              <p class="program pfont">Python</p>
+              <p class="percentage cfont" >65%</p>
+              <div class="progress_bar" id="python">
+                <div class="fill_num" id="python_ptg" style="width: 65%;"></div>
+              </div>
+              <br>
+              <!-- Java -->
+              <p class="program pfont">Java</p>
+              <p class="percentage cfont" >50%</p>
+              <div class="progress_bar" id="java">
+                <div class="fill_num" id="java_ptg" style="width: 50%;"></div>
+              </div>
+              <br>
+              <!-- C/C++ -->
+              <p class="program pfont">C/C++</p>
+              <p class="percentage cfont" >50%</p>
+              <div class="progress_bar" id="cleng">
+                <div class="fill_num" id="clang_ptg"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <span id="design">Design</span>
+            <div class="design_skill">
+              <!-- Photoshop -->
+              <p class="program pfont">Photoshop</p>
+              <p class="percentage cfont" >80%</p>
+              <div class="progress_bar" id="photoshop">
+                <div class="fill_num" id="photoshop_ptg" style="width: 80%;"></div>
+              </div>
+              
+              <!-- Illustrator -->
+              <p class="program pfont">Illustrator</p>
+              <p class="percentage cfont" >70%</p>
+              <div class="progress_bar" id="illust">
+                <div class="fill_num" id="illust_ptg" style="width: 70%;"></div>
+              </div>
+              
+              <!-- Premiere Pro -->
+              <p class="program pfont">Premiere Pro</p>
+              <p class="percentage cfont" >90%</p>
+              <div class="progress_bar" id="premier">
+                <div class="fill_num" id="premier_ptg" style="width: 90%;"></div>
+              </div>
+              
+              <!-- After Effects -->
+              <p class="program pfont">After Effects</p>
+              <p class="percentage cfont" >70%</p>
+              <div class="progress_bar" id="affec">
+                <div class="fill_num" id="affec_ptg" style="width: 70%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- portfolio 메뉴 section -->
+      <section class="menu" id="portfolio">
+        <div class="menu_text" >Portfolio</div>
+        <div class="portfolio">
+          <span id="title">Webpage & Clone coding</span>
+            <div class="test">
+              <div class="section"> 
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <div class="slidewrap">
+                  <ul class="slidelist">
+                    <!-- 페이지 목록 -->
+                    <li class="slideitem">
+                      <a><img src="./slide/slide01.jpeg" alt=""></a>
+                    </li>
+                    <li class="slideitem">
+                      <a><img src="./slide/slide02.jpeg" alt=""></a>
+                    </li>
+                    <li class="slideitem">
+                      <a><img src="./slide/slide03.jpeg" alt=""></a>
+                    </li>
+                    <!-- 좌우 버튼 -->
+                    <div class="slide_control">
+                      <div>
+                        <label for="slide03" class="left" id="p13"></label>
+                        <label for="slide02" class="right" id="p12"></label>
+                      </div>
+                      <div>
+                        <label for="slide01" class="left" id="p21"></label>
+                        <label for="slide03" class="right" id="p23"></label>
+                      </div>
+                      <div>
+                        <label for="slide02" class="left" id="p32"></label>
+                        <label for="slide01" class="right" id="p31"></label>
+                      </div>
+                    </div>
+                  </ul>
+                  <!-- 페이징 -->
+                  <ul class="slide_pagelist">
+                    <li id="p1">
+                      <label for="slide01"></label>
+                    </li>
+                    <li id="p2">
+                      <label for="slide02"></label>
+                    </li>
+                    <li id="p3">
+                      <label for="slide03"></label>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        
+      <!-- contact 메뉴 section -->
+      <section class="menu" id="contact">
+        <div class="menu_text">Contact</div>
+        <div class="contact_container">
+          <!-- contact method -->
+          <div class="address">
+            <div class="con_item" id="con01"><img src="./image/con1.png" alt=""></div>
+            <div class="con_item" id="con02"><img src="./image/con2.png" alt=""></div>
+            <div class="con_item" id="con03"><img src="./image/con3.png" alt=""></div>
+            <div class="con_item" id="con04"><img src="./image/con4.png" alt=""></div>
+          </div>
+          
+          <!-- contact board -->
+          <div class="box_wrap">
+            <div class="box">
+              <!-- contact board -->
+              <div class="contact_board" id="board">Contact Board</div>
+              <!-- box list -->
+              <div class="box_list">
+                <template id="box">
+                  <div class="box_comment">
+                    <span class="box_text"></span>
+                    <span class="box_btn">
+                      <span class="contact_btn editWriting" style="margin: 10px auto;">수정</span>
+                      <span class="contact_btn deleteWriting" style="margin: 10px auto;">삭제</span>
+                    </span>
+                  </div>
+                </template>
+              </div>
+        
+              <!-- contact board -->
+              <div class="contact_board" id="write">Write</div>
+              <!-- box input div -->
+              <div class="box_input">
+                <!-- writer -->
+                <div class="writer">
+                  <span>작성자</span>
+                  <span>
+                    <input type="text" id="writer"/>
+                  </span>
+                </div>
+                <div class="pw">
+                  <span>비밀번호</span>
+                  <span>
+                    <input type="password" id="pw"/>
+                  </span>
+                </div>
+                <div class="contents">
+                  <span>내용</span>
+                  <span>
+                    <textarea id="contents"></textarea>
+                  </span>
+                </div>
+                <input type="hidden" id="user_id"></input>
+        
+                <div class="box_btn">
+                  <span class="contact_btn" id="saveWriting" style="margin: 10px auto;" onclick="saveWriting()">등록</span>
+                  <span id="modifyWriting"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </section>
+    <div class="footer_button">
+        <div id="button" class="topBtn">
+          <a href="#"><img src="./image/arrow.png" alt="" width="60%"></a>
+        </div>
+    </div>
+    <footer class="footer">
+      <div class="links">
+        <div id="github"><a href="https://github.com/your-mistletoe"><img src="./image/github.png" alt=""></a></div>
+        <div id="insta"><a href="https://instagram.com/your_mistletoe"><img src="./image/insta.png" alt=""></a></div>
+        <div id="blog"><a href="https://blog.naver.com/yourmistletoe"><img src="./image/blog.png" alt=""></a></div>
+      </div>
+      <div class="copyright">Copyright © 박다인 2022 All rights reserved</div>
+    </footer>
+  </div>
+</body>
+</html>
+
